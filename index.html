@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>HTML Accessibility</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header--container">
+            <h1>
+                HTML Accessibility
+            </h1>
+            <nav class="nav">
+                <a class="link" href="#images-example" >Images examples</a>
+                <a class="link" href="#nav-example">Navigation bar
+                    examples</a>
+                <a class="link" href="#buttons-example">Buttons and links examples</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <!-- Images example section -->
+        <section aria-labelledby="s1" id="images-example">
+            <h2 id="s1">Images examples</h2>
+            <div class="separator"></div>
+
+            <div class="photos">
+                <div class="photo">
+                    <h3>Example 1: An image without the alt attribute. The screen reader will read the source name
+                    </h3>
+                    <img class="photo-img" src="./animal-34574.jpg" />
+                </div>
+                <div class="photo">
+                    <h3>Example 2: An image with the alt attribute filled correctly.</h3>
+                    <img class="photo-img" src="./animal-23415.jpg"
+                        alt="Friendly cow in the field looking closely at the camera" />
+                </div>
+                <div class="photo">
+                    <h3>Example 3: A decorative image. The image will be ignored by the screen reader.
+                    </h3>
+                    <img class="photo-img" src="./background.jpeg" alt="" />
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation example section -->
+        <section aria-labelledby="s4" id="nav-example">
+            <h2 id="s4">Navigation bar example</h2>
+            <div class="separator"></div>
+
+            <div class="navigation-examples">
+                <div class="example">
+                    <h3>Example 1: Navigation bar without using semantic HTML</h3>
+                    <div class="nav2">
+                        <div class="nav2-item">Home</div>
+                        <div class="nav2-item">About us</div>
+                        <div class="nav2-item">Contact</div>
+                    </div>
+                </div>
+                <div class="vertical-separator"></div>
+                <div class="example">
+                    <h3>Example 2: Navigation bar using semantic HTML correctly</h3>
+                    <nav class="nav2">
+                        <a class="nav2-item" href="#">Home</a>
+                        <a class="nav2-item" href="#">About us</a>
+                        <a class="nav2-item" href="#">Contact</a>
+                    </nav>
+                </div>
+            </div>
+        </section>
+        <!-- Buttons example section -->
+        <section aria-labelledby="s2" id="buttons-example">
+            <h2 id="s2">Buttons and links example</h2>
+            <div class="separator"></div>
+            <div class="buttons">
+
+                <div class="buttons-column">
+                    <h3>Example 1: Link tag correctly used with aria labelled by attribute filled</h3>
+
+                    <div class="button-example">
+                        <p>
+                            <span id="p1" aria-hidden="true">
+                                If you want to know more about the description and requirements for the fullstack
+                                developer open
+                                position please
+                            </span>
+                            <a href="#" aria-labelledby="p1 link2">
+                                <span id="link2" aria-hidden="true">click here</span>
+                            </a><span aria-hidden="true">.</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="vertical-separator"></div>
+
+                <div class="buttons-column">
+                    <h3>Example 2: Aria role attribute is used to fix semantic HTML misuse</h3>
+                    <div class="button-example">
+                        <p>Link tag used for a case that is a button:</p>
+                        <a class="button" href="">Open modal</a>
+                    </div>
+
+                    <div class="button-example">
+                        <p>Link tag fixed with the role button attribute:</p>
+                        <a class="button" role="button">Open modal</a>
+                    </div>
+                </div>
+                <div class="vertical-separator"></div>
+                <div class="buttons-column">
+                    <h3>Example 3: Applying different languages for the button text content</h3>
+
+                    <div class="button-example">
+                        <p>Button in the default language:</p>
+                        <button class="button">Hello</button>
+                    </div>
+
+                    <div class="button-example">
+                        <p>Button in spanish translated correctly:</p>
+                        <button class="button" lang="es">Hola</button>
+                    </div>
+
+                    <div class="button-example">
+                        <p>Button in spanish but not translated:</p>
+                        <button class="button">Hola</button>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
